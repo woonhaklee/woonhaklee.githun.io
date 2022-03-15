@@ -1,0 +1,82 @@
+.componentWrap{padding:20px;}
+.componentWrap .tit{font-size:16px;font-weight:bold;}
+.componentWrap .txt{font-size:16px;text-align:center;}
+.componentInner{display:flex;justify-content:center;align-items:center;position:relative;height:20vh;}
+
+.toggleLabel{position:relative;display:inline-block;width:120px;height:60px;}
+.toggleLabel input{display:none;}
+.toggleSwitch{overflow:hidden;position:absolute;top:0;left:0;bottom:0;right:0;font-size:0;border-radius:60px;background-color:#e1e1e1;}
+.toggleSwitch:before{content:'';position:absolute;top:0px;left:0px;width:0%;height:100%;background-color:#24c875;animation:switchSliderOff 0.3s alternate-reverse;}
+.toggleSwitch:after{content:'';position:absolute;top:5px;left:5px;width:50px;height:50px;border-radius:50%;background-color:#fff;-webkit-transition:.4s;transition:.4s;}
+.toggleLabel input:checked + .toggleSwitch{/*background-color:#24c875;*/}
+.toggleLabel input:checked + .toggleSwitch:before{width:100%;background-color:#24c875;animation:switchSliderOn 0.3s alternate;}
+.toggleLabel input:checked + .toggleSwitch:after{-webkit-transform:translateX(60px);transform:translateX(60px);}
+
+@-webkit-keyframes switchSliderOn{
+    0%{width:0;}
+    10%{width:calc(10% - 20px)}
+    70%{width:calc(70%)}
+    100%{width:100%;}
+}
+
+@keyframes switchSliderOn{
+    0%{width:0;}
+    10%{width:calc(10% - 20px)}
+    70%{width:calc(70%)}
+    100%{width:100%;}
+
+}@-webkit-keyframes switchSliderOff{
+    100%{width:100%;}
+    90%{width:calc(90% - 20px)}
+    30%{width:calc(30%)}
+    0%{width:0;}
+}
+
+@keyframes switchSliderOff{
+    100%{width:100%;}
+    90%{width:calc(90% - 20px)}
+    30%{width:calc(30%)}
+    0%{width:0;}
+}
+
+.dim{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:0.5;z-index:100;}
+.modalOpenButton{width:120px;height:60px;font-size:16px;color:#fff;border:1px solid #24c875;border-radius:60px;background-color:#24c875;}
+.modalCloseButton{position:relative;top:-5px;width:20px;height:20px;font-size:0;border:none;background:none;}
+.modalCloseButton:before,
+.modalCloseButton:after{display:inline-block;content:'';position:absolute;top:50%;left:0;width:100%;height:1px;background-color:#000;}
+.modalCloseButton:before{transform:rotate(45deg);}
+.modalCloseButton::after{transform:rotate(135deg);}
+.ModalDialog{position:absolute;top:50%;left:50%;padding:10px;width:80%;height:100px;text-align:center;border-radius:10px;background-color:#fff;transform:translate(-50%, -50%);box-sizing:border-box;z-index:101;}
+.ModalDialog p{line-height:40px;}
+
+.tabWrap{display:block;padding:20px 0;}
+.tabBtn{display:flex;position:relative;padding-left:40px;font-size:0;box-sizing:border-box;background-color:#c1c1c1;}
+.tabBtn li{display:inline-block;flex-grow:1;}
+.tabBtn li:first-child{margin-left:0;}
+.tabBtn li:last-child{margin-right:0;}
+.tabBtn button{display:inline-block;position:relative;padding:0;width:100%;height:35px;border:none;}
+.tabBtn button span{display:block;position:relative;padding:0 25px;height:35px;line-height:35px;font-weight:bold;color:#3e3e3e;border:none;background-color:#c1c1c1;}
+.tabBtn li:focus span,
+.tabBtn li:hover span,
+.tabBtn li.active span,
+.tabBtn li:active span{color:#fff;background-color:#24c875;}
+.tabView{position:relative;pointer-events:none;}
+.tabView div{display:none;text-align:center;line-height:100px;}
+.tabView div.active{display:block;}
+
+.autoComplete{}
+.autoComplete select{width:200px;}
+
+.clickToEdit{display:block;text-align:center;}
+.clickToEdit label{width:30px;}
+.clickToEdit input{margin:0 0 20px 10px;}
+.clickToEdit p{margin-top:20px;}
+.clickToEdit p span,
+.clickToEdit p em{display:inline-block;}
+.clickToEdit p span em:first-child{min-width:30px;}
+.clickToEdit p span em:last-child{min-width:40px;}
+
+.tags{display:block;}
+.tags ul{display:flex;width:100%;}
+.tags ul li{display:inline-block;padding:5px;min-width:100px;height:30px;text-align:center;color:#fff;line-height:30px;border-radius:20px;background-color:#24c875;box-sizing:border-box;}
+.tags ul li .tagClose{display:block;width:15px;height:15px;line-height:15px;font-size:14px;}
